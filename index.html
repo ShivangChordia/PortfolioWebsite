@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivang Chordia</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Other meta tags and styles -->
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Popper.js and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Other scripts and styles -->
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var options = {
+                strings: [
+                    "A web developer",
+                    "A software developer",
+                    "A cybersecurity enthusiast"
+                ],
+                typeSpeed: 50,
+                backSpeed: 30,
+                loop: true
+            };
+            var typed = new Typed("#typed-text", options);
+        });
+
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Smooth scrolling when clicking on navbar links
+            document.querySelectorAll('.nav-link').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+        });
+
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Smooth scrolling when clicking on navbar links
+            document.querySelectorAll('.nav-link').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+
+            // Smooth scrolling when clicking on navbar brand
+            document.querySelector('.navbar-brand').addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Get the target section ID (home in this case)
+                var targetSectionId = this.getAttribute('href').substring(1);
+
+                // Scroll smoothly to the target section
+                document.getElementById(targetSectionId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+
+
+
+
+            window.addEventListener('scroll', function () {
+                var scrollPosition = window.scrollY;
+
+                document.querySelectorAll('section').forEach(section => {
+                    var offsetTop = section.offsetTop;
+                    var offsetBottom = offsetTop + section.offsetHeight;
+
+                    // Adjust the offset if needed
+                    var offsetAdjustment = 50; // Increased for stability
+
+                    if (scrollPosition >= offsetTop - offsetAdjustment && scrollPosition < offsetBottom) {
+                        // Section is in view
+                        document.querySelectorAll('.nav-link').forEach(navLink => {
+                            navLink.classList.remove('active');
+                        });
+
+                        // Update the active class for the corresponding navbar link
+                        var navLinkId = 'nav-' + section.id;
+                        document.getElementById(navLinkId).classList.add('active');
+                    }
+                });
+            });
+
+            var observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    var navLinkId = 'nav-' + entry.target.id;
+                    document.querySelectorAll('.nav-link').forEach(navLink => {
+                        navLink.classList.remove('active');
+                    });
+
+                    if (entry.isIntersecting) {
+                        document.getElementById(navLinkId).classList.add('active');
+                    }
+                });
+            }, {
+                rootMargin: '-50px 0px -50px 0px' // Adjust the rootMargin as needed
+            });
+
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('.navbar-collapse a').click(function () {
+                $(".navbar-collapse").collapse('hide');
+            });
+        });
+    </script>
+
+    <style>
+        body {
+            background-color: #200E3A;
+            /* Dark background */
+            color: #f8f9fa;
+            /* Light text */
+        }
+
+        .small-headings {
+            font-family: 'Roboto';
+            color: #52D3D8;
+            font-size: 18px;
+            margin-left: 5%;
+            font-weight: 900;
+            /* Use bold weight for emphasized headings */
+
+        }
+
+        .navbar-brand,
+        .navbar-nav .nav-link {
+            color: #f8f9fa;
+            /* Light text for navbar links */
+        }
+
+        .card {
+            background-color: #535C91;
+            /* Dark card background */
+            color: #f8f9fa;
+            /* Light text for card content */
+        }
+        .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+        .card-title,
+        .card-text {
+            color: #f8f9fa;
+            /* Light text for card title and text */
+        }
+
+        .btn-secondary {
+            background-color: #343a40;
+            /* Darker button background */
+            color: #f8f9fa;
+            /* Light text for button */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .skill {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            padding-top: 90px;
+            /* Adjust this value based on the height of your navbar */
+        }
+
+        .skill-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar {
+            height: 20px;
+            background-color: #f3f3f3;
+            border-radius: 5px;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background-color: #4CAF50;
+            border-radius: 5px;
+        }
+
+        .social-sidebar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            /* Adjust the width as needed */
+            height: 160px;
+            /* Adjust the height as needed */
+            background-color: transparent;
+            /* Make the background transparent or match the body's background */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            /* Align items to the top */
+            align-items: center;
+            padding: 10px;
+            z-index: 1000;
+            /* Ensure it's above other content */
+            margin-bottom: 200px;
+
+        }
+
+
+
+        .social-sidebar a {
+            color: #f8f9fa;
+            /* Match the navbar link color */
+            text-decoration: none;
+            margin-top: 20px;
+            /* Adjust as needed */
+        }
+
+
+        .social-sidebar i {
+            font-size: 24px;
+            /* Adjust the icon size as needed */
+        }
+
+        .social-sidebar::after {
+            content: '';
+            /* Required for the pseudo-element to work */
+            position: absolute;
+            top: 100%;
+            /* Align the line to the top of the .social-sidebar */
+            left: 50%;
+            /* Position the line to the right of the .social-sidebar */
+            width: 2px;
+            /* Width of the vertical line */
+            height: 100vh;
+            /* Full height of the viewport */
+            background-color: #f8f9fa;
+            /* Color of the line, matching the navbar link color */
+            z-index: -1;
+            /* Ensure the line stays behind the .social-sidebar content */
+        }
+
+
+
+        /* Add a vertical line */
+        .email-sidebar::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 2px;
+            /* Adjust the width of the line as needed */
+            background-color: #f8f9fa;
+            /* Line color */
+            rotate: 90deg;
+            left: 0;
+            top: 0;
+        }
+
+        /* Adjust the positioning of the email-sidebar */
+        .email-sidebar {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 200px;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px;
+            z-index: 1000;
+            transform: rotate(-90deg);
+            writing-mode: vertical-rl;
+        }
+
+        .email-sidebar a {
+            color: #f8f9fa;
+            /* Ensure the link color matches */
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: bold;
+            rotate: 90deg;
+            margin-left: 400px;
+        }
+
+
+        .landing-section {
+
+            width: 100%;
+            height: 100vh;
+            background-color: #200E3A;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            color: #f8f9fa;
+        }
+
+        .landing-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .adjectives {
+            font-size: x-large;
+        }
+
+        .navbar-nav .nav-item .nav-link.active {
+            color: #52D3D8;
+            /* Active link color */
+            font-weight: bold;
+        }
+
+        #resume-btn{
+            background-color: #3887BE
+        }
+
+        /* Update badge color */
+.badge-primary {
+    background-color: #200E3A; /* Change this color to your desired color */
+}
+
+        @media (max-width: 620px) {
+
+            .social-sidebar,
+            .email-sidebar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 1100px) {
+            h4 {
+                margin-top: 130px;
+            }
+           
+        }
+
+        @media (max-width: 992px) {
+           .navbar{
+            background-color: #200E3A;
+           }
+        }
+    </style>
+</head>
+
+
+
+<body>
+
+    <div class="social-sidebar">
+        <a href="https://github.com/ShivangChordia" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/iamshivang" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/buzywhale" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <div class="email-sidebar">
+        <a href="mailto:shivanghcordia02@gmail.com">shivangchordia02@gmail.com</a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <a class="navbar-brand" href="#home">
+            <img src="logo.png" height="50px" width="50px" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="background-color: #200E3A;">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav" ">
+
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" id="nav-about" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="nav-project" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="nav-skills" href="#skills">Skills</a>
+                </li>
+            </ul>
+            <div class="nav-item">
+                <a id="resume-btn" class="btn btn-secondary" href="Shivang Resume.pdf" target="_blank">Resume</a>
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- Landing Section -->
+    <div id="home" class="landing-section">
+        <div class="landing-content">
+            <h1>Hi, I'm Shivang Sunil Chordia</h1>
+            <span id="typed-text" class="adjectives"></span>
+            
+        </div>
+    </div>
+
+    <section id="about" class="container mt-5">
+        <h4 class="mb-4">About Me</h4>
+        <p class="lead">
+            🚀 Hey there! I'm <strong>Shivang Sunil Chordia</strong>, a Software Engineering Technology student at
+            Conestoga College, on an exhilarating journey through the vast realm of technology! Originally hailing from
+            the vibrant city of Mumbai, India, I've discovered my academic haven amidst the serene landscapes of
+            Waterloo, Ontario, Canada.
+        </p>
+        <p class="lead">
+            💻 Beyond being a code enthusiast, I'm on a mission to engineer solutions that leave a lasting impact in our
+            ever-evolving technological landscape. My passion extends beyond mastering the intricacies of code; it's
+            about creating innovations that break boundaries and make a meaningful difference.
+        </p>
+        <p class="lead">
+            🌍 As a tech enthusiast, I'm dedicated to leveraging my skills and knowledge to navigate through the
+            complexities of the digital world, creating solutions that transcend borders. Join me in exploring the
+            endless possibilities of tech-driven change and let's make a tangible difference together!
+        </p>
+        <p class="lead">
+            🔗 Let's connect and collaborate on exciting projects, dive into the world of coding, and uncover the
+            limitless potential of technology! Excited to share this journey with you!
+        </p>
+    </section>
+    <section id="projects" class="container mt-5">
+        <h4 class="mb-4">Projects</h4>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="tms.png" class="card-img-top img-fluid" alt="Transport Management Animated Image"
+                        style="height: 200px;">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Transport Management System</h5>
+                        <p class="card-text">The Transport Management System (TMS) is a comprehensive solution designed
+                            to streamline and optimize the logistics and transportation processes within an
+                            organization.</p>
+                        <div class="skills-container">
+                            <span class="badge badge-primary">C#</span>
+                            <span class="badge badge-primary">WPF</span>
+                            <span class="badge badge-primary">MySQL</span>
+                            <span class="badge badge-primary">.NET Framework</span>
+                        </div>
+                        <a href="https://github.com/ShivangChordia/TMS-App-SQF23" class="btn btn-secondary mt-3"
+                            target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="ai-helpr.png" class="card-img-top img-fluid" alt="AI-Helpr Image" style="height: 200px;">
+                    <div class="card-body">
+                        <h5 class="card-title">AI-Helpr</h5>
+                        <p class="card-text">
+                            Transform your study routine with the Ultimate Student's Text Summarization Companion – an
+                            app integrating PALM AI to efficiently summarize heavy-detail assignments into short tasks.
+                        </p>
+                        <div class="skills-container">
+                            <span class="badge badge-primary">React.js</span>
+                            <span class="badge badge-primary">HTML</span>
+                            <span class="badge badge-primary">CSS</span>
+                            <span class="badge badge-primary">Firebase</span>
+                        </div>
+                        <a href="https://devpost.com/software/ai_helpr" class="btn btn-secondary mt-3"
+                            target="_blank">Devpost</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="text-editor.jpg" class="card-img-top img-fluid" alt="Text Editor Image"
+                        style="height: 200px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Online Text Editor</h5>
+                        <p class="card-text">
+                            A sophisticated text editor for seamlessly editing, saving, and creating files, designed for
+                            efficient text handling. Ideal for professionals and enthusiasts seeking a user-friendly
+                            tool.</p>
+                        <div class="skills-container">
+                            <span class="badge badge-primary">HTML</span>
+                            <span class="badge badge-primary">CSS</span>
+                            <span class="badge badge-primary">Javascript</span>
+                            <span class="badge badge-primary">JQuery</span>
+                            <span class="badge badge-primary">Ajax</span>
+                        </div>
+                        <a href="https://github.com/ShivangChordia/WDD-A6-textEditor" class="btn btn-secondary mt-3"
+                            target="_blank">Github</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 offset-md-2">
+                <div class="card mb-4">
+                    <img src="word-game.png" class="card-img-top img-fluid" alt="Word Quest Image"
+                        style="height: 200px;">
+                    <div class="card-body">
+                        <h5 class="card-title">WordQuest</h5>
+                        <p class="card-text">
+                            Developed a multi-user word guessing game utilizing TCP/IP for communication. The C# server,
+                            a multi-threaded console application, orchestrates concurrent game sessions with randomly
+                            selected 80-character strings for word guessing. The WPF client enables user connections and
+                            input of guesses and configs. </p>
+                        <div class="skills-container">
+                            <span class="badge badge-primary">TCP/IP</span>
+                            <span class="badge badge-primary">C#</span>
+                            <span class="badge badge-primary">WPF</span>
+                        </div>
+                        <a href="https://github.com/ShivangChordia/WP-TCP-IP-Word-Guessing-Game"
+                            class="btn btn-secondary mt-3" target="_blank">Github</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="pizza-shop.jpg" class="card-img-top img-fluid" alt="Pizza Ordering Site"
+                        style="height: 200px;">
+                    <div class="card-body">
+                        <h5 class="card-title">SET Pizza ordering</h5>
+                        <p class="card-text">
+                            Developes a multi-page web application for SET Pizza Shop's online ordering system,
+                            featuring user input validation, dynamic pricing through AJAX. The application includes
+                            selecting pizza toppings with real-time price updates, confirming or canceling the order,
+                            and a final thank-you page with the user's full name.
+                        </p>
+                        <div class="skills-container">
+                            <span class="badge badge-primary">ASP.NET</span>
+                            <span class="badge badge-primary">HTML</span>
+                            <span class="badge badge-primary">CSS</span>
+                            <span class="badge badge-primary">JavaScript</span>
+                            <span class="badge badge-primary">Ajax</span>
+                        </div>
+                        <a href="https://github.com/ShivangChordia/WDD-Final" class="btn btn-secondary mt-3"
+                            target="_blank">Github</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="container mt-5">
+        <h4 class="mb-4">Technical Skills</h4>
+        <h4 class="small-headings">Languages</h4>
+        <div class="mb-4">
+            <div class="row">
+                <!-- Second Skill -->
+                <div class="col-md-4">
+                    <div class="skill">
+                        <div class="skill-name">C/C++</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Third Skill -->
+                <div class="col-md-4">
+                    <div class="skill">
+                        <div class="skill-name">C#</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skill">
+                        <div class="skill-name">MySQL</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skill">
+                        <div class="skill-name">HTML 5</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skill">
+                        <div class="skill-name">Javascript</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skill">
+                        <div class="skill-name">CSS 3</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skill">
+                        <div class="skill-name">ASP.NET</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skill">
+                        <div class="skill-name">PHP</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h4 class="small-headings">Tools and Technologies</h4>
+        <div class="mb-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="skill">
+                        <div class="skill-name">Github</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skill">
+                        <div class="skill-name">Azure</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skill">
+                        <div class="skill-name">Kali Linux</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h4 class="small-headings">Methodologies and Concepts</h4>
+        <div class="mb-4">
+            <div class="row">
+                <!-- Second Skill -->
+                <div class="col-md-4">
+                    <div class="skill">
+                        <div class="skill-name">Data Structures</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skill">
+                        <div class="skill-name">OOPS</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skill">
+                        <div class="skill-name">Agile Concepts</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skill">
+                        <div class="skill-name">Leadership</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container text-center">
+            <span class="text-muted">© 2023 Shivang Chordia. All rights reserved.</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>
